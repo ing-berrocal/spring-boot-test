@@ -25,6 +25,7 @@ public class BankAccountController {
 
     @GetMapping(path = "/{id}")
     public BankAccount getBankAccountById(@PathVariable("id") Integer id){
+
         return useCase.getBankAccountById(id);
     }
 

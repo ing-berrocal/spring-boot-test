@@ -1,14 +1,24 @@
 package co.com.bancolombia.demoapi.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(schema = "public",name = "tbl_bank_account")
 public class BankAccount {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Column(name = "bank_name")
     private String bankName;
+    @Column(name = "account_type")
     private String accountType;
+    @Column(name = "account_name")
     private String accountName;
 
-    public BankAccount(int id, String bankName, String accountType, String accountName) {
-        this.id = id;
+    public BankAccount(){}
+
+    public BankAccount(String bankName, String accountType, String accountName) {
         this.bankName = bankName;
         this.accountType = accountType;
         this.accountName = accountName;
