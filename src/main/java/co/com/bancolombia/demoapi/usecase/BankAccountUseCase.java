@@ -42,7 +42,11 @@ public class BankAccountUseCase {
     }
 
     public void addBankAccount(BankAccount bankAccount){
-        service.save(bankAccount);
+        if(service.findByAccountName(bankAccount.getAccountName()) == null)
+            service.save(bankAccount);
+        else{
+            throw new RuntimeException();
+        }
     }
 
     public void updateBankAccount(BankAccount bankAccount){

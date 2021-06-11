@@ -18,7 +18,7 @@ public class BankAccount {
 
     public BankAccount(){}
 
-    public BankAccount(String bankName, String accountType, String accountName) {
+    public BankAccount(String accountName, String accountType, String bankName) {
         this.bankName = bankName;
         this.accountType = accountType;
         this.accountName = accountName;
